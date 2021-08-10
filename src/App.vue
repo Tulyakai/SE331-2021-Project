@@ -16,7 +16,7 @@
       </router-link>
       <ul class="nav navbar-nav flexed-top float-right">
         <li class="nav-item">
-          <router-link :to="{ name: 'About' }" class="nav-link pr-3"
+          <router-link :to="{ name: 'AvailableVaccine' }" class="nav-link pr-3"
             >Available Vaccines</router-link
           >
         </li>

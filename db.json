@@ -1,0 +1,47 @@
+{
+  "vaccines": [
+    {
+      "id": "V1",
+      "brand": "Astrazeneca",
+      "country": "England",
+      "ageRange": "18+ years-old",
+      "dose": 2,
+      "website": "https://www.astrazeneca.com/",
+      "sideEffect": [
+        "Feeling tired",
+        "Headache",
+        "Muscle aches",
+        "Joint pain",
+        "Nausea"
+      ]
+    },
+    {
+      "id": "V2",
+      "brand": "Sinovac",
+      "country": "China",
+      "ageRange": "18+ years-old",
+      "dose": 2,
+      "website": "http://www.sinovac.com/",
+      "sideEffect": [
+        "Pain at the injection site",
+        "Headache",
+        "Tiredness",
+        "Muscle aches"
+      ]
+    },
+    {
+      "id": "V3",
+      "brand": "Sinopharm",
+      "country": "China",
+      "ageRange": "18+ years-old",
+      "dose": 2,
+      "website": "http://www.sinopharm.com/",
+      "sideEffect": [
+        "Pain at the injection site",
+        "Headache",
+        "Tiredness",
+        "Muscle aches"
+      ]
+    }
+  ]
+}
