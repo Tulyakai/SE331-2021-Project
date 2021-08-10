@@ -20,15 +20,23 @@
           </div>
         </div>
       </div>
-      <div class="col-md-8 col-sm-12 p-3 mt-3 ml-md-4" id="content"></div>
+      <div class="col-md-8 col-sm-12 p-3 mt-3 ml-md-4" id="content">
+        <Card>
+          <!-- add Patient's data -->
+        </Card>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Card from "@/components/Card";
+
 export default {
   name: "PatientList",
-  components: {},
+  components: {
+    Card,
+  },
 };
 </script>
 
