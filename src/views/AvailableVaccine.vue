@@ -34,19 +34,23 @@
           <!-- <h1>  add vaccine brand </h1> -->
           <h1>{{ vaccine.brand }}</h1>
           <p>
-            <span class="font-weight-bold bg-info p-1 mr-2 rounded">Country</span>
+            <span class="font-weight-bold bg-info p-1 mr-2 rounded"
+              >Country</span
+            >
             <!-- add vaccine country  -->
             {{ vaccine.country }}
           </p>
           <p>
-            <span class="font-weight-bold bg-info p-1 mr-2 rounded">Age recommend</span>
+            <span class="font-weight-bold bg-info p-1 mr-2 rounded"
+              >Age recommend</span
+            >
             <!-- add vaccine age range -->
             {{ vaccine.ageRange }}
           </p>
           <p>
             <span class="font-weight-bold bg-info p-1 mr-2 rounded">Dose</span>
             <!-- add vaccine dose   -->
-             {{ vaccine.dose }} dose(s)
+            {{ vaccine.dose }} dose(s)
           </p>
           <p>
             <a
@@ -81,7 +85,7 @@ export default {
       vaccines: null,
     };
   },
-   created() {
+  created() {
     VaccineService.getVaccines()
       .then((res) => {
         this.vaccines = res.data;

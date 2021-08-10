@@ -21,9 +21,34 @@
         </div>
       </div>
       <div class="col-md-8 col-sm-12 p-3 mt-3 ml-md-4" id="content">
-        <Card>
-          <!-- add Patient's data -->
-        </Card>
+        <p>All patients: {{ totalPatients }}</p>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <Card
+            v-for="patient in patients"
+            :patient="patient"
+            :key="patient.id"
+          ></Card>
+        </div>
+        <nav class="navbar mt-10 justify-content-center">
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+              <router-link
+                class="page-link"
+                :to="{ name: 'PatientList', query: { page: page - 1 } }"
+                >Previous</router-link
+              >
+            </li>
+            <li class="page-link">{{ page }}</li>
+            <li class="page-item">
+              <router-link
+                class="page-link"
+                :to="{ name: 'PatientList', query: { page: page + 1 } }"
+                v-if="hasNextPage"
+                >Next</router-link
+              >
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </div>
@@ -31,11 +56,47 @@
 
 <script>
 import Card from "@/components/Card";
+import { watchEffect } from "@vue/runtime-core";
+import PatientService from "@/service/PatientService.js";
 
 export default {
   name: "PatientList",
   components: {
     Card,
+  },
+  data() {
+    return {
+      patients: null,
+      totalPatients: null
+    };
+  },
+  props: {
+    page: {
+      type: Number,
+      required: true,
+    },
+    limit: {
+      type: Number,
+      required: true,
+    },
+  },
+  created() {
+    watchEffect(() => {
+      PatientService.getPatients(this.page, this.limit)
+        .then((res) => {
+          this.patients = res.data;
+          this.totalPatients = res.headers["x-total-count"];
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    });
+  },
+  computed: {
+    hasNextPage() {
+      let totalPage = Math.ceil(this.totalPatients / this.limit);
+      return this.page < totalPage;
+    },
   },
 };
 </script>
