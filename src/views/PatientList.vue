@@ -67,7 +67,7 @@ export default {
   data() {
     return {
       patients: null,
-      totalPatients: null
+      totalPatients: null,
     };
   },
   props: {

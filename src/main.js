@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
-import store from "./store";
+import Gstore from "./store";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-createApp(App).use(store).use(router).mount("#app");
+createApp(App).provide("Gstore", Gstore).use(router).mount("#app");

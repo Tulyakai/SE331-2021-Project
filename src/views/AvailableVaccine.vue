@@ -4,7 +4,7 @@
     <div class="container mt-2">
       <div
         class="row bg-dark mb-4 p-5 rounded"
-        v-for="vaccine in vaccines"
+        v-for="vaccine in Gstore.vaccines"
         :key="vaccine.id"
       >
         <!-- vaccine pic -->
@@ -76,23 +76,8 @@
   </div>
 </template>
 <script>
-import VaccineService from "@/service/VaccineService";
-
 export default {
   name: "available-vaccine",
-  data() {
-    return {
-      vaccines: null,
-    };
-  },
-  created() {
-    VaccineService.getVaccines()
-      .then((res) => {
-        this.vaccines = res.data;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  },
+  inject: ["Gstore"],
 };
 </script>

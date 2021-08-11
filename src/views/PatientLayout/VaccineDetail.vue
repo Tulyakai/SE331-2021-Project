@@ -5,6 +5,20 @@
       <div class="row justify-content-center">
         <div class="col-4">
           <!-- add vaccine's image -->
+          <img
+            class="img-fluid"
+            src="../../assets/astrazeneca.png"
+            v-if="Gstore.patient.vaccination.firstdose.brand == 'Astrazeneca'"
+            style="height: 300px"
+          />
+          <img
+            class="img-fluid"
+            src="../../assets/sinopharm.png"
+            v-else-if="
+              Gstore.patient.vaccination.firstdose.brand == 'Sinopharm'
+            "
+          />
+          <img class="img-fluid" src="../../assets//sinovac.png" v-else />
         </div>
 
         <!-- Show first dose infornation  -->
@@ -14,19 +28,16 @@
           <p>
             <span class="font-weight-bold bg-info p-1 rounded">Brand:</span>
             <!-- add Vaccine Brand Name -->
+            {{ Gstore.patient.vaccination.firstdose.brand }}
           </p>
           <p>
             <span class="font-weight-bold bg-info p-1 rounded">Timestamp:</span>
             <!-- add timestamp  -->
+            {{ Gstore.patient.vaccination.firstdose.timestamp }}
           </p>
-
           <!-- suggestion box first dose -->
-          <form>
-            <input
-              type="text"
-              placeholder="Suggest for 1st dose"
-              required
-            />
+          <form @submit.prevent="addSuggest(1)">
+            <input type="text" placeholder="Suggest for 1st dose" v-model="suggest1" required />
             <button class="btn btn-success btn-sm ml-1">Add</button>
           </form>
           <br />
@@ -34,20 +45,53 @@
             Suggestion from doctor:
           </p>
           <!-- Show suggestion if no suggestion show  "No suggestion yet" -->
-          
+          <ul
+            v-if="Gstore.patient.vaccination.firstdose.suggestion.length != 0"
+          >
+            <li
+              v-for="(val, key) in Gstore.patient.vaccination.firstdose
+                .suggestion"
+              :key="key"
+            >
+              {{ val }}
+            </li>
+          </ul>
+          <p class="font-weight-bold text-danger mt-3" v-else>
+            No suggestion yet
+          </p>
         </div>
       </div>
     </div>
 
     <!-- Show seccond dose infornation if haven't got seccond dose show "Have not got seccond dose yet" -->
-    
     <div
       class="container p-4 mt-3"
       id="content"
+      v-if="!Gstore.patient.vaccination.seconddose"
+    >
+      <h2 class="text-danger">Have not got seccond dose yet</h2>
+    </div>
+    <div
+      class="container p-4 mt-3"
+      id="content"
+      v-if="Gstore.patient.vaccination.seconddose"
     >
       <div class="row justify-content-center">
         <div class="col-4">
           <!-- add vaccine's image -->
+          <img
+            class="img-fluid"
+            src="../../assets/astrazeneca.png"
+            v-if="Gstore.patient.vaccination.seconddose.brand == 'Astrazeneca'"
+          />
+          <img
+            class="img-fluid"
+            src="../../assets/sinopharm.png"
+            v-else-if="
+              Gstore.patient.vaccination.seconddose.brand == 'Sinopharm'
+            "
+          />
+          <img class="img-fluid" src="../../assets//sinovac.png" v-else />
         </div>
         <div class="col-4">
           <h2>Second dose</h2>
@@ -55,18 +99,19 @@
 
           <p>
             <span class="font-weight-bold bg-info p-1 rounded">Brand:</span>
-            <!-- add Vaccine Brand Name -->
+            {{ Gstore.patient.vaccination.seconddose.brand }}
           </p>
           <p>
             <span class="font-weight-bold bg-info p-1 rounded">Timestamp:</span>
-            <!-- add timestamp  -->
+            {{ Gstore.patient.vaccination.seconddose.timestamp }}
           </p>
 
           <!-- suggestion box first dose -->
-          <form >
+          <form @submit.prevent="addSuggest(2)">
             <input
               type="text"
               placeholder="Suggest for 2nd dose"
+              v-model="suggest2"
               required
             />
             <button class="btn btn-success btn-sm ml-1">Add</button>
@@ -76,15 +121,59 @@
             Suggestion from doctor:
           </p>
           <!-- suggestion box second dose if no suggestion show  "No suggestion yet"-->
+          <ul
+            v-if="Gstore.patient.vaccination.seconddose.suggestion.length != 0"
+          >
+            <li
+              v-for="(val, key) in Gstore.patient.vaccination.seconddose
+                .suggestion"
+              :key="key"
+            >
+              {{ val }}
+            </li>
+          </ul>
+          <p class="font-weight-bold text-danger mt-3" v-else>
+            No suggestion yet
+          </p>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
+import PatientService from "@/service/PatientService.js";
 
 export default {
-
+  inject: ["Gstore"],
+  data() {
+    return {
+      suggest1: "",
+      suggest2: "",
+      newData: null,
+    };
+  },
+  methods: {
+    addSuggest(dose) {
+      let myTarget = JSON.parse(JSON.stringify(this.Gstore.patient));
+      if (dose == 1) {
+        myTarget.vaccination.firstdose.suggestion = [
+          ...myTarget.vaccination.firstdose.suggestion,
+          this.suggest1,
+        ];
+      } else {
+        myTarget.vaccination.seconddose.suggestion = [
+          ...myTarget.vaccination.seconddose.suggestion,
+          this.suggest2,
+        ];
+      }
+      this.newData = myTarget;
+      PatientService.postSuggestion(this.Gstore.patient.id, this.newData).catch(
+        (err) => {
+          console.log(err);
+        }
+      );
+    },
+  },
 };
 </script>
 
