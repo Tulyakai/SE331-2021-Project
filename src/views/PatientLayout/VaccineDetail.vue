@@ -37,7 +37,12 @@
           </p>
           <!-- suggestion box first dose -->
           <form @submit.prevent="addSuggest(1)">
-            <input type="text" placeholder="Suggest for 1st dose" v-model="suggest1" required />
+            <input
+              type="text"
+              placeholder="Suggest for 1st dose"
+              v-model="suggest1"
+              required
+            />
             <button class="btn btn-success btn-sm ml-1">Add</button>
           </form>
           <br />
