@@ -7,6 +7,9 @@ import VaccineDetail from "@/views/PatientLayout/VaccineDetail.vue";
 import PatientService from "@/service/PatientService";
 import VaccineService from "@/service/VaccineService";
 import Gstore from "@/store";
+import Nprogress from "nprogress";
+import NotFound from '@/views/NotFound.vue';
+import NetworkError from '@/views/NetworkError.vue';
 
 const routes = [
   {
@@ -17,6 +20,22 @@ const routes = [
       page: parseInt(route.query.page) || 1,
       limit: parseInt(route.query.limit) || 9,
     }),
+  },
+  {
+    path: '/404/:resource',
+    name: 'NotFound',
+    component: NotFound,
+    props: true
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: 'PageNotFound',
+    component: NotFound
+  },
+  {
+    path: '/network-error',
+    name: 'NetworkError',
+    component: NetworkError
   },
   {
     path: "/availableVaccine",
@@ -74,6 +93,7 @@ const routes = [
         component: VaccineDetail,
       },
     ],
+    
   },
 ];
 
@@ -87,6 +107,13 @@ const router = createRouter({
       return { top: 0 };
     }
   },
+});
+router.beforeEach(() => {
+  Nprogress.start();
+});
+
+router.afterEach(() => {
+  Nprogress.done();
 });
 
 export default router;

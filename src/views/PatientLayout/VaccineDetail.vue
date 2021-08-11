@@ -111,7 +111,7 @@
             {{ Gstore.patient.vaccination.seconddose.timestamp }}
           </p>
 
-          <!-- suggestion box first dose -->
+          <!-- suggestion box seccond dose -->
           <form @submit.prevent="addSuggest(2)">
             <input
               type="text"
@@ -177,6 +177,37 @@ export default {
           console.log(err);
         }
       );
+      this.newData = myTarget;
+      this.confirmAddSuggest(dose);
+    },
+    confirmAddSuggest(dose) {
+      // Use sweetalert2
+      this.$swal
+        .fire({
+          title: "Do you want to add the suggestion?",
+          showDenyButton: true,
+          confirmButtonText: `Save`,
+          denyButtonText: `Cancel`,
+        })
+        .then((result) => {
+          /* Read more about isConfirmed, isDenied below */
+          if (result.isConfirmed) {
+            this.$swal.fire("Suggestion saved!", "", "success");
+            if (dose == 1) {
+              this.Gstore.patient.vaccination.firstdose.suggestion = [
+                ...this.Gstore.patient.vaccination.firstdose.suggestion,
+                this.suggest1,
+              ];
+              this.suggest1 = "";
+            } else {
+              this.Gstore.patient.vaccination.seconddose.suggestion = [
+                ...this.Gstore.patient.vaccination.seconddose.suggestion,
+                this.suggest2,
+              ];
+              this.suggest2 = "";
+            }
+          } 
+        });
     },
   },
 };

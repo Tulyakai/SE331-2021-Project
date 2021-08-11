@@ -211,6 +211,11 @@ export default {
       };
       this.search = "";
       this.age = 75;
+      this.$swal.fire(
+          "Clear succesfully!",
+          "You have cleared up the filter",
+          "success"
+        );
       this.window.scroll(0, 0);
     },
     filterByName(patients) {

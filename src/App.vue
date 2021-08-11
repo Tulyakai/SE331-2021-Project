@@ -63,4 +63,17 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+#nprogress .bar {
+  background: #FFBB00 !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #FFBB00, 0 0 5px #FFBB00;
+}
+
+#nprogress .spinner .spinner-icon {
+  border-right-color: #FFBB00;
+  border-left-color: #FFBB00;
+}
 </style>
