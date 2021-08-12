@@ -1,9 +1,14 @@
 <template>
   <div class="row justify-content-center">
-    <img class="img-fluid" src="../assets/banner.png" />
+    <img
+      class="img-fluid"
+      src="../assets/banner.png"
+      style="width: 650px; height: auto"
+    />
     <div class="container mt-2">
       <div
-        class="row bg-dark mb-4 p-5 rounded"
+        class="row mb-4 p-5 rounded"
+        id="vaccineBox"
         v-for="vaccine in Gstore.vaccines"
         :key="vaccine.id"
       >
@@ -34,38 +39,40 @@
           <!-- <h1>  add vaccine brand </h1> -->
           <h1>{{ vaccine.brand }}</h1>
           <p>
-            <span class="font-weight-bold bg-info p-1 mr-2 rounded"
+            <span class="font-weight-bold p-1 mr-2 rounded" id="title"
               >Country</span
             >
             <!-- add vaccine country  -->
             {{ vaccine.country }}
           </p>
           <p>
-            <span class="font-weight-bold bg-info p-1 mr-2 rounded"
+            <span class="font-weight-bold p-1 mr-2 rounded" id="title"
               >Age recommend</span
             >
             <!-- add vaccine age range -->
             {{ vaccine.ageRange }}
           </p>
           <p>
-            <span class="font-weight-bold bg-info p-1 mr-2 rounded">Dose</span>
+            <span class="font-weight-bold p-1 mr-2 rounded" id="title"
+              >Dose</span
+            >
             <!-- add vaccine dose   -->
             {{ vaccine.dose }} dose(s)
           </p>
           <p>
             <a
               :href="vaccine.website"
-              class="btn btn-outline-success p-1 rounded"
+              class="btn btn-info p-1 rounded"
               target="_blank"
             >
               Website
             </a>
           </p>
-          <h3 class="font-weight-bold bg-info px -1 rounded d-inline px-1">
+          <h3 class="font-weight-bold px -1 rounded d-inline px-1" id="title">
             Side effects
           </h3>
           <!-- add side effect -->
-          <ul>
+          <ul style="list-style-type: none">
             <li v-for="(effect, key) in vaccine.sideEffect" :key="key">
               {{ effect }}
             </li>
@@ -81,3 +88,14 @@ export default {
   inject: ["Gstore"],
 };
 </script>
+
+<style scoped>
+#vaccineBox {
+  background-color: #9addd1;
+  color: black;
+  border-radius: 30px;
+}
+#title {
+  background-color: #00c2cb;
+}
+</style>

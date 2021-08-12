@@ -1,37 +1,46 @@
 <template>
-  <div class="row mt-md-4 mt-sm-4">
-    <h3>Vaccine's detail</h3>
-    <div class="container p-4 mt-3" id="content">
+  <div class="row justify-content-center mt-md-4 mt-sm-4">
+    <h2 style="color: black">Vaccine's detail</h2>
+    <div class="container col-md-12 col-sm-12" id="content">
       <div class="row justify-content-center">
-        <div class="col-4">
+        <div class="col-md-5 col-sm-12">
           <!-- add vaccine's image -->
           <img
             class="img-fluid"
+            style="height: 250px"
             src="../../assets/astrazeneca.png"
             v-if="Gstore.patient.vaccination.firstdose.brand == 'Astrazeneca'"
-            style="height: 300px"
           />
           <img
             class="img-fluid"
+            style="height: 250px"
             src="../../assets/sinopharm.png"
             v-else-if="
               Gstore.patient.vaccination.firstdose.brand == 'Sinopharm'
             "
           />
-          <img class="img-fluid" src="../../assets//sinovac.png" v-else />
+          <img
+            class="img-fluid"
+            style="height: 250px"
+            src="../../assets//sinovac.png"
+            v-else
+          />
         </div>
 
         <!-- Show first dose infornation  -->
-        <div class="col-4 mt-3">
-          <h2>First dose</h2>
-          <br />
+        <div class="col-md-5 col-sm-12">
+          <h3>First dose</h3>
           <p>
-            <span class="font-weight-bold bg-info p-1 rounded">Brand:</span>
+            <span class="font-weight-bold p-1 rounded mr-1" id="title"
+              >Brand:</span
+            >
             <!-- add Vaccine Brand Name -->
             {{ Gstore.patient.vaccination.firstdose.brand }}
           </p>
           <p>
-            <span class="font-weight-bold bg-info p-1 rounded">Timestamp:</span>
+            <span class="font-weight-bold p-1 rounded mr-1" id="title"
+              >Timestamp:</span
+            >
             <!-- add timestamp  -->
             {{ Gstore.patient.vaccination.firstdose.timestamp }}
           </p>
@@ -46,12 +55,13 @@
             <button class="btn btn-success btn-sm ml-1">Add</button>
           </form>
           <br />
-          <p class="font-weight-bold bg-info p-1 d-inline rounded">
+          <p class="font-weight-bold p-1 d-inline rounded" id="title">
             Suggestion from doctor:
           </p>
           <!-- Show suggestion if no suggestion show  "No suggestion yet" -->
           <ul
             v-if="Gstore.patient.vaccination.firstdose.suggestion.length != 0"
+            style="list-style-type: none"
           >
             <li
               v-for="(val, key) in Gstore.patient.vaccination.firstdose
@@ -82,32 +92,39 @@
       v-if="Gstore.patient.vaccination.seconddose"
     >
       <div class="row justify-content-center">
-        <div class="col-4">
+        <div class="col-md-5 col-sm-12">
           <!-- add vaccine's image -->
           <img
             class="img-fluid"
+            style="height: 250px"
             src="../../assets/astrazeneca.png"
             v-if="Gstore.patient.vaccination.seconddose.brand == 'Astrazeneca'"
           />
           <img
             class="img-fluid"
+            style="height: 250px"
             src="../../assets/sinopharm.png"
             v-else-if="
               Gstore.patient.vaccination.seconddose.brand == 'Sinopharm'
             "
           />
-          <img class="img-fluid" src="../../assets//sinovac.png" v-else />
+          <img
+            class="img-fluid"
+            style="height: 250px"
+            src="../../assets//sinovac.png"
+            v-else
+          />
         </div>
-        <div class="col-4">
-          <h2>Second dose</h2>
-          <br />
-
+        <div class="col-md-5 col-sm-12">
+          <h3>Second dose</h3>
           <p>
-            <span class="font-weight-bold bg-info p-1 rounded">Brand:</span>
+            <span class="font-weight-bold p-1 rounded" id="title">Brand:</span>
             {{ Gstore.patient.vaccination.seconddose.brand }}
           </p>
           <p>
-            <span class="font-weight-bold bg-info p-1 rounded">Timestamp:</span>
+            <span class="font-weight-bold p-1 rounded" id="title"
+              >Timestamp:</span
+            >
             {{ Gstore.patient.vaccination.seconddose.timestamp }}
           </p>
 
@@ -122,12 +139,13 @@
             <button class="btn btn-success btn-sm ml-1">Add</button>
           </form>
           <br />
-          <p class="font-weight-bold bg-info p-1 d-inline rounded">
+          <p class="font-weight-bold p-1 d-inline rounded" id="title">
             Suggestion from doctor:
           </p>
           <!-- suggestion box second dose if no suggestion show  "No suggestion yet"-->
           <ul
             v-if="Gstore.patient.vaccination.seconddose.suggestion.length != 0"
+            style="list-style-type: none"
           >
             <li
               v-for="(val, key) in Gstore.patient.vaccination.seconddose
@@ -146,7 +164,8 @@
   </div>
 </template>
 <script>
-import PatientService from "@/service/PatientService.js";
+//
+// import PatientService from "@/service/PatientService.js";
 
 export default {
   inject: ["Gstore"],
@@ -171,12 +190,6 @@ export default {
           this.suggest2,
         ];
       }
-      this.newData = myTarget;
-      PatientService.postSuggestion(this.Gstore.patient.id, this.newData).catch(
-        (err) => {
-          console.log(err);
-        }
-      );
       this.newData = myTarget;
       this.confirmAddSuggest(dose);
     },
@@ -206,6 +219,19 @@ export default {
               ];
               this.suggest2 = "";
             }
+            // PatientService.postSuggestion(
+            //   this.Gstore.patient.id,
+            //   this.newData
+            // ).catch((err) => {
+            //   console.log(err);
+            // });
+
+            // setTimeout(() => {
+            //   this.$router.go();
+            // }, 1000);
+          } else {
+            this.suggest1 = "";
+            this.suggest2 = "";
           }
         });
     },
@@ -217,6 +243,7 @@ export default {
 #content {
   border: 1px solid #35393d;
   border-radius: 6px;
-  background-color: #1e2124;
+  background-color: #9addd1;
+  padding-top: 20px;
 }
 </style>

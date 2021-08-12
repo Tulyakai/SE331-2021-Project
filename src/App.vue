@@ -1,11 +1,7 @@
 <template>
   <nav
-    class="
-      navbar navbar-dark
-      bg-dark
-      justify-content-between
-      flex-nowrap flex-row
-    "
+    class="navbar navbar-light justify-content-between flex-nowrap flex-row"
+    style="background-color: #6ec2b8"
   >
     <div class="container">
       <router-link
@@ -35,14 +31,8 @@
     <router-view />
   </div>
   <nav
-    class="
-      navbar navbar-dark
-      bg-dark
-      mt-4
-      justify-content-center
-      flex-nowrap flex-row
-    "
-    style="background-color: rgba(0, 0, 0, 0.2)"
+    class="navbar navbar-light mt-4 justify-content-center flex-nowrap flex-row"
+    style="background-color: #6ec2b8; color: black"
   >
     <div class="text-center p-3">© 2021 Copyright: Krittaporn and Tulyawat</div>
   </nav>
@@ -55,7 +45,8 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #ffffff;
-  background-color: #171a18;
+  background-image: url("../src/assets/background.png");
+  background-size: cover;
 }
 
 #nav {
@@ -72,15 +63,15 @@
 }
 
 #nprogress .bar {
-  background: #ffbb00 !important;
+  background: #09606a !important;
 }
 
 #nprogress .peg {
-  box-shadow: 0 0 10px #ffbb00, 0 0 5px #ffbb00;
+  box-shadow: 0 0 10px #09606a, 0 0 5px #09606a;
 }
 
 #nprogress .spinner .spinner-icon {
-  border-right-color: #ffbb00;
-  border-left-color: #ffbb00;
+  border-top-color: #09606a;
+  border-left-color: #09606a;
 }
 </style>

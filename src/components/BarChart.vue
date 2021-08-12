@@ -2,7 +2,7 @@
   <div class="col-12">
     <column-chart
       loading="Loading..."
-      :colors="['#b00', '#666', '#d23']"
+      :colors="['#ce87d5', '#d0515b', '#69EBB0']"
       :data="[
         ['Astrazeneca', this.fdose.az + this.sdose.az],
         ['Sinovac', this.fdose.sv + this.sdose.sv],

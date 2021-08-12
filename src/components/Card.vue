@@ -86,13 +86,14 @@ export default {
 
 <style scoped>
 .card {
-  background-color: #2d3033;
-  color: rgb(192, 195, 197);
+  background-color: #86d4cb;
+  color: #000000;
   margin-bottom: 20px;
   padding-bottom: 8px;
+  border-radius: 10px;
 }
 .card:hover {
-  background-color: #46494d;
+  background-color: #46ccbc;
 }
 .event-card {
   padding: 20px;

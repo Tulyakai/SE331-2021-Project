@@ -3,7 +3,7 @@
     <img class="img-fluid mb-3" src="../assets/logo.png" />
     <div class="row">
       <div class="col-md-3 col-sm-12 p-4 mt-md-3" id="sidebar">
-        <div class="container mb-3 bg-dark p-3 rounded">
+        <div class="container mb-3 p-3 rounded" id="insidebar">
           <h5>Vaccine brands</h5>
           <div class="row mt-3">
             <img src="../assets/astrazeneca.png" style="width: 50px" />
@@ -20,7 +20,8 @@
           </div>
         </div>
         <button
-          class="btn btn-outline-secondary mb-3 mt-3"
+          class="btn mb-3 mt-3"
+          id="button"
           @click="filterShow = !filterShow"
         >
           <span v-if="!filterShow">Show Filters</span>
@@ -86,7 +87,7 @@
             </div>
           </form>
           <button
-            class="btn btn-outline-warning rounded btn-sm mt-2"
+            class="btn btn-outline-danger rounded btn-sm mt-2"
             @click="clearFilter"
           >
             Clear the filter
@@ -207,7 +208,7 @@ export default {
       }
     });
   },
-  
+
   methods: {
     clearFilter() {
       this.selected = {
@@ -286,15 +287,29 @@ export default {
 
 <style>
 #content {
-  border: 1px solid #35393d;
+  border: 1px solid #39bbc7;
   border-radius: 6px;
-  background-color: #1e2124;
+  background-color: #9addd1;
+  color: black;
 }
 
 #sidebar {
-  border: 1px solid #35393d;
+  border: 1px solid #27828b;
   border-radius: 6px;
-  background-color: #1e2124;
+  background-color: #9addd1;
   height: fit-content;
+  color: black;
+}
+
+#insidebar {
+  border: 1px solid #27828b;
+  border-radius: 6px;
+  background-color: #86d4cb;
+  height: fit-content;
+  color: black;
+}
+
+#button {
+  background-color: #39bbc7;
 }
 </style>

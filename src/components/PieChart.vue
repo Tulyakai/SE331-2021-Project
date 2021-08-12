@@ -7,7 +7,7 @@
         ['Sinovac', this.data.sv],
         ['Sipharm', this.data.sp],
       ]"
-      :colors="['#b00', '#666', '#d23']"
+      :colors="['#d6a4eb', '#e0858c', '#81f9c9']"
     ></pie-chart>
   </div>
 </template>
