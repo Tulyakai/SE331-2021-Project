@@ -14,7 +14,14 @@
       >
         <img src="../src/assets/logo.png" style="width: 100px" />
       </router-link>
-      <ul class="nav navbar-nav flexed-top float-right">
+      <ul
+        class="nav navbar-nav flex-md-row flex-sm-column flexed-top float-right"
+      >
+        <li class="nav-item">
+          <router-link :to="{ name: 'Report' }" class="nav-link pr-3"
+            >Report</router-link
+          >
+        </li>
         <li class="nav-item">
           <router-link :to="{ name: 'AvailableVaccine' }" class="nav-link pr-3"
             >Available Vaccines</router-link
@@ -65,15 +72,15 @@
 }
 
 #nprogress .bar {
-  background: #FFBB00 !important;
+  background: #ffbb00 !important;
 }
 
 #nprogress .peg {
-  box-shadow: 0 0 10px #FFBB00, 0 0 5px #FFBB00;
+  box-shadow: 0 0 10px #ffbb00, 0 0 5px #ffbb00;
 }
 
 #nprogress .spinner .spinner-icon {
-  border-right-color: #FFBB00;
-  border-left-color: #FFBB00;
+  border-right-color: #ffbb00;
+  border-left-color: #ffbb00;
 }
 </style>

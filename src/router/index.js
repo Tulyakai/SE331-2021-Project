@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import PatientList from "../views/PatientList.vue";
 import AvailableVaccine from "@/views/AvailableVaccine.vue";
+import Report from "../views/Report.vue";
 import Layout from "@/views/PatientLayout/Layout.vue";
 import PatientDetail from "@/views/PatientLayout/PatientDetail.vue";
 import VaccineDetail from "@/views/PatientLayout/VaccineDetail.vue";
@@ -8,8 +9,8 @@ import PatientService from "@/service/PatientService";
 import VaccineService from "@/service/VaccineService";
 import Gstore from "@/store";
 import Nprogress from "nprogress";
-import NotFound from '@/views/NotFound.vue';
-import NetworkError from '@/views/NetworkError.vue';
+import NotFound from "@/views/NotFound.vue";
+import NetworkError from "@/views/NetworkError.vue";
 
 const routes = [
   {
@@ -22,20 +23,25 @@ const routes = [
     }),
   },
   {
-    path: '/404/:resource',
-    name: 'NotFound',
+    path: "/report",
+    name: "Report",
+    component: Report,
+  },
+  {
+    path: "/404/:resource",
+    name: "NotFound",
     component: NotFound,
-    props: true
+    props: true,
   },
   {
-    path: '/:catchAll(.*)',
-    name: 'PageNotFound',
-    component: NotFound
+    path: "/:catchAll(.*)",
+    name: "PageNotFound",
+    component: NotFound,
   },
   {
-    path: '/network-error',
-    name: 'NetworkError',
-    component: NetworkError
+    path: "/network-error",
+    name: "NetworkError",
+    component: NetworkError,
   },
   {
     path: "/availableVaccine",
@@ -93,7 +99,6 @@ const routes = [
         component: VaccineDetail,
       },
     ],
-    
   },
 ];
 

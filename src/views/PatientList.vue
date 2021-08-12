@@ -113,7 +113,10 @@
             :key="patient.id"
           ></Card>
         </div>
-        <nav class="navbar mt-10 justify-content-center" v-if="filterPatientList.length">
+        <nav
+          class="navbar mt-10 justify-content-center"
+          v-if="filterPatientList.length"
+        >
           <ul class="pagination justify-content-center">
             <li class="page-item">
               <router-link
@@ -133,7 +136,9 @@
             </li>
           </ul>
         </nav>
-        <h3 class="text text-danger mt-4" v-else>There is no one you are looking for.</h3>
+        <h3 class="text text-danger mt-4" v-else>
+          There is no one you are looking for.
+        </h3>
       </div>
     </div>
   </div>
@@ -174,8 +179,8 @@ export default {
       required: true,
     },
   },
-  created() {
-    watchEffect(() => {
+  async created() {
+    await watchEffect(() => {
       if (
         this.search != "" ||
         this.selected.fbrand != "Any" ||
@@ -202,6 +207,7 @@ export default {
       }
     });
   },
+  
   methods: {
     clearFilter() {
       this.selected = {
@@ -212,10 +218,10 @@ export default {
       this.search = "";
       this.age = 75;
       this.$swal.fire(
-          "Clear succesfully!",
-          "You have cleared up the filter",
-          "success"
-        );
+        "Clear succesfully!",
+        "You have cleared up the filter",
+        "success"
+      );
       this.window.scroll(0, 0);
     },
     filterByName(patients) {
@@ -271,12 +277,7 @@ export default {
       if (this.age < 75) {
         npatients = this.filterByAgeRange(npatients);
       }
-      let myTarget = JSON.parse(JSON.stringify(npatients));
-      if (myTarget != null) {
-        if (myTarget.length > 9) {
-          console.log(myTarget[8]);
-        }
-      }
+
       return npatients;
     },
   },

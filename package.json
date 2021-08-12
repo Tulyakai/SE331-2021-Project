@@ -10,10 +10,12 @@
   "dependencies": {
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+    "chart.js": "^3.5.0",
     "concurrently": "^6.2.1",
     "core-js": "^3.6.5",
     "nprogress": "^0.2.0",
     "vue": "^3.0.0",
+    "vue-chartkick": "^1.1.0",
     "vue-router": "^4.0.0-0",
     "vue-sweetalert2": "^5.0.2",
     "vuex": "^4.0.0-0"
