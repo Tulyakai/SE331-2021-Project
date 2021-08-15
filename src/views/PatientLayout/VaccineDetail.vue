@@ -260,4 +260,10 @@ export default {
   background-color: #9addd1;
   padding-top: 20px;
 }
+#title {
+  background-color: #00c2cb;
+  margin-right: 5px;
+  border-radius: 2px;
+  padding-left: 5px;
+}
 </style>

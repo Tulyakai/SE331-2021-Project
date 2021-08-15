@@ -40,21 +40,21 @@
           <h1>{{ vaccine.brand }}</h1>
           <p>
             <span class="font-weight-bold p-1 mr-2 rounded" id="title"
-              >Country</span
+              >Country:</span
             >
             <!-- add vaccine country  -->
             {{ vaccine.country }}
           </p>
           <p>
             <span class="font-weight-bold p-1 mr-2 rounded" id="title"
-              >Age recommend</span
+              >Age recommend:</span
             >
             <!-- add vaccine age range -->
             {{ vaccine.ageRange }}
           </p>
           <p>
             <span class="font-weight-bold p-1 mr-2 rounded" id="title"
-              >Dose</span
+              >Dose:</span
             >
             <!-- add vaccine dose   -->
             {{ vaccine.dose }} dose(s)
@@ -68,9 +68,9 @@
               Website
             </a>
           </p>
-          <h3 class="font-weight-bold px -1 rounded d-inline px-1" id="title">
-            Side effects
-          </h3>
+          <h5 class="font-weight-bold px -1 rounded d-inline px-1" id="title">
+            Side effects:
+          </h5>
           <!-- add side effect -->
           <ul style="list-style-type: none">
             <li v-for="(effect, key) in vaccine.sideEffect" :key="key">

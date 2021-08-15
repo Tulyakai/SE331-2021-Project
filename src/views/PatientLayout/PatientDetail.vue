@@ -15,21 +15,21 @@
         v-else
       />
     </div>
-    <div class="col-md-5 col-sm-12 p-4 mt-3" id="content">
+    <div class="col-md-5 col-sm-12 p-4 mt-3 " id="content">
       <h3>Patient's detail</h3>
       <div class="container mt-5">
         <p>
           <strong id="title">Name:</strong>{{ Gstore.patient.firstname }}
           {{ Gstore.patient.surname }}
         </p>
-        <p><strong id="title">TEL:</strong>{{ Gstore.patient.phone }}</p>
+        <p><strong id="title">Tel:</strong>{{ Gstore.patient.phone }}</p>
         <p>
-          <strong id="title">Email: </strong
+          <strong id="title">Email:</strong
           ><span v-if="Gstore.patient.email">{{ Gstore.patient.email }}</span
-          ><span class="text text-danger" v-else>Dose not have email</span>
+          ><span class="text text-danger" v-else>Email is not provided.</span>
         </p>
         <p><strong id="title">Gender:</strong>{{ Gstore.patient.gender }}</p>
-        <p><strong id="title">Age:</strong>{{ Gstore.patient.age }}</p>
+        <p><strong id="title">Age:</strong>{{ Gstore.patient.age }} years old</p>
         <p>
           <strong id="title">Hometown:</strong>{{ Gstore.patient.hometown }}
         </p>
