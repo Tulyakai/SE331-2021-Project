@@ -5,7 +5,7 @@
       :data="[
         ['Astrazeneca', this.data.az],
         ['Sinovac', this.data.sv],
-        ['Sipharm', this.data.sp],
+        ['Sinopharm', this.data.sp],
       ]"
       :colors="['#d6a4eb', '#e0858c', '#81f9c9']"
     ></pie-chart>

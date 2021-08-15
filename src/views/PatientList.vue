@@ -116,7 +116,7 @@
         </div>
         <nav
           class="navbar mt-10 justify-content-center"
-          v-if="filterPatientList.length"
+          v-if="filterPatientList != 0"
         >
           <ul class="pagination justify-content-center">
             <li class="page-item">
