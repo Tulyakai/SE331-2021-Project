@@ -21,5 +21,6 @@ export default {
 <style>
 .notfound {
   min-height: 85vh;
+  color: black;
 }
 </style>

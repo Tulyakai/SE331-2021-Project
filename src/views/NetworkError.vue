@@ -11,5 +11,6 @@
 <style>
 .network {
   min-height: 85vh;
+  color: black;
 }
 </style>

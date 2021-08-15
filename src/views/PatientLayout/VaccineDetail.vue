@@ -39,6 +39,13 @@
           </p>
           <p>
             <span class="font-weight-bold p-1 rounded mr-1" id="title"
+              >Injected at:</span
+            >
+            <!-- add Vaccine Brand Name -->
+            {{ Gstore.patient.vaccination.firstdose.injected_at }}
+          </p>
+          <p>
+            <span class="font-weight-bold p-1 rounded mr-1" id="title"
               >Timestamp:</span
             >
             <!-- add timestamp  -->
@@ -120,6 +127,13 @@
           <p>
             <span class="font-weight-bold p-1 rounded" id="title">Brand:</span>
             {{ Gstore.patient.vaccination.seconddose.brand }}
+          </p>
+          <p>
+            <span class="font-weight-bold p-1 rounded mr-1" id="title"
+              >Injected at:</span
+            >
+            <!-- add Vaccine Brand Name -->
+            {{ Gstore.patient.vaccination.firstdose.injected_at }}
           </p>
           <p>
             <span class="font-weight-bold p-1 rounded" id="title"

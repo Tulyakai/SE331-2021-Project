@@ -1,10 +1,10 @@
 <template>
   <div class="home">
     <img class="img-fluid mb-3" src="../assets/logo.png" />
-    <div class="row">
+    <div class="row justify-content-center">
       <div class="col-md-3 col-sm-12 p-4 mt-md-3" id="sidebar">
-        <div class="container mb-3 p-3 rounded" id="insidebar">
-          <h5>Vaccine brands</h5>
+        <div class="container mb-3 p-3 rounded " id="insidebar">
+          <h5>Vaccine Brands</h5>
           <div class="row mt-3">
             <img src="../assets/astrazeneca.png" style="width: 50px" />
             <label class="text mt-3">Astrazeneca</label>

@@ -14,6 +14,7 @@
         "firstdose": {
           "id": "V1",
           "brand": "Astrazeneca",
+          "injected_at": "Chiang Mai",
           "timestamp": "14-06-2021",
           "suggestion": [
             "Drink a lot of water"
@@ -36,6 +37,7 @@
         "firstdose": {
           "id": "V1",
           "brand": "Astrazeneca",
+          "injected_at": "Bangkok",
           "timestamp": "16-06-2021",
           "suggestion": [
             "Everything is ok"
@@ -57,12 +59,14 @@
         "firstdose": {
           "id": "V3",
           "brand": "Sinopharm",
+          "injected_at": "Chiang Mai",
           "timestamp": "15-06-2021",
           "suggestion": []
         },
         "seconddose": {
           "id": "V3",
           "brand": "Sinopharm",
+          "injected_at": "Chiang Mai",
           "timestamp": "16-07-2021",
           "suggestion": []
         }
@@ -81,6 +85,7 @@
         "firstdose": {
           "id": "V3",
           "brand": "Sinopharm",
+          "injected_at": "Chiang Mai",
           "timestamp": "27-07-2021",
           "suggestion": []
         },
@@ -101,12 +106,14 @@
         "firstdose": {
           "id": "V2",
           "brand": "Sinovac",
+          "injected_at": "Chiang Mai",
           "timestamp": "16-05-2021",
           "suggestion": []
         },
         "seconddose": {
           "id": "V1",
           "brand": "Astrazeneca",
+          "injected_at": "Chiang Mai",
           "timestamp": "02-07-2021",
           "suggestion": []
         }
@@ -126,12 +133,14 @@
         "firstdose": {
           "id": "V2",
           "brand": "Sinovac",
+          "injected_at": "Chiang Mai",
           "timestamp": "16-05-2021",
           "suggestion": []
         },
         "seconddose": {
           "id": "V1",
           "brand": "Astrazeneca",
+          "injected_at": "Chiang Mai",
           "timestamp": "02-07-2021",
           "suggestion": []
         }
@@ -151,12 +160,14 @@
         "firstdose": {
           "id": "V1",
           "brand": "Astrazeneca",
+          "injected_at": "Bangkok",
           "timestamp": "16-05-2021",
           "suggestion": []
         },
         "seconddose": {
           "id": "V1",
           "brand": "Astrazeneca",
+          "injected_at": "Bangkok",
           "timestamp": "16-06-2021",
           "suggestion": []
         }
@@ -175,6 +186,7 @@
         "firstdose": {
           "id": "V2",
           "brand": "Sinovac",
+          "injected_at": "Bangkok",
           "timestamp": "15-06-2021",
           "suggestion": []
         },
@@ -194,12 +206,14 @@
         "firstdose": {
           "id": "V2",
           "brand": "Sinovac",
+          "injected_at": "Bangkok",
           "timestamp": "27-07-2021",
           "suggestion": []
         },
         "seconddose": {
           "id": "V2",
           "brand": "Sinovac",
+          "injected_at": "Bangkok",
           "timestamp": "16-07-2021",
           "suggestion": []
         }
@@ -218,12 +232,14 @@
         "firstdose": {
           "id": "V2",
           "brand": "Sinovac",
+          "injected_at": "Bangkok",
           "timestamp": "15-06-2021",
           "suggestion": []
         },
         "seconddose": {
           "id": "V2",
           "brand": "Sinovac",
+          "injected_at": "Bangkok",
           "timestamp": "16-07-2021",
           "suggestion": []
         }
@@ -242,12 +258,14 @@
         "firstdose": {
           "id": "V2",
           "brand": "Sinovac",
+          "injected_at": "Chiang Mai",
           "timestamp": "27-07-2021",
           "suggestion": []
         },
         "seconddose": {
           "id": "V2",
           "brand": "Sinovac",
+          "injected_at": "Chiang Mai",
           "timestamp": "16-07-2021",
           "suggestion": []
         }
@@ -266,12 +284,14 @@
         "firstdose": {
           "id": "V2",
           "brand": "Sinovac",
+          "injected_at": "Chonburi",
           "timestamp": "15-06-2021",
           "suggestion": []
         },
         "seconddose": {
           "id": "V1",
           "brand": "Astrazeneca",
+          "injected_at": "Chonburi",
           "timestamp": "16-07-2021",
           "suggestion": []
         }
@@ -290,36 +310,14 @@
         "firstdose": {
           "id": "V1",
           "brand": "Astrazeneca",
+          "injected_at": "Chonburi",
           "timestamp": "27-07-2021",
           "suggestion": []
         },
         "seconddose": {
           "id": "V1",
           "brand": "Astrazeneca",
-          "timestamp": "16-07-2021",
-          "suggestion": []
-        }
-      }
-    },
-    {
-      "id": "P14",
-      "firstname": "John3",
-      "surname": "Doe",
-      "email":null,
-      "phone":"0000000014",
-      "gender": "Male",
-      "hometown": "Nowhere",
-      "age": 50,
-      "vaccination": {
-        "firstdose": {
-          "id": "V2",
-          "brand": "Sinovac",
-          "timestamp": "15-06-2021",
-          "suggestion": []
-        },
-        "seconddose": {
-          "id": "V2",
-          "brand": "Sinovac",
+          "injected_at": "Chonburi",
           "timestamp": "16-07-2021",
           "suggestion": []
         }
