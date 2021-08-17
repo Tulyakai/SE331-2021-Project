@@ -1,6 +1,6 @@
 # SE331-2021-project by Kai and Tong
 ### Application URL:
-* VMs : http://3.237.13.186:8001/
+* VMs : http://44.197.228.221:8001/
 
 ### Group member:
 No  | Student ID |  Name | Git Hub
