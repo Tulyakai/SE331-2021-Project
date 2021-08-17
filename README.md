@@ -1,6 +1,6 @@
 # se331-2021-project
 ### Application URL:
-* VMs : http://104.215.198.33:8001/
+* VMs : http://3.237.13.186:8001
 
 ### Group member:
 No  | Student ID |  Name | Git Hub
