@@ -1,6 +1,7 @@
 # SE331-2021-project by Kai and Tong
 ### Application URL:
 * VMs : http://44.197.228.221:8001/
+* Firebase : https://se331-2021-project-1920f.web.app/
 
 ### Group member:
 No  | Student ID |  Name | Git Hub
